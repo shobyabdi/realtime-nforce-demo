@@ -1,0 +1,113 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Shabihul Abdi" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+		body {
+		  padding: 40px;
+		}
+		.red{
+		   background: #E05252;
+		   padding: 120px 120px;
+		   -webkit-border-radius: 40px;
+		   -moz-border-radius: 40px;
+		   border-radius: 40px;
+		   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+		   color: white;
+		   font-size: 24px;
+		   font-family: Georgia, serif;
+		   text-decoration: none;
+		   vertical-align: middle;
+		}
+		
+		.green {
+		   background: #60AF60;
+		   padding: 120px 120px;
+		   -webkit-border-radius: 40px;
+		   -moz-border-radius: 40px;
+		   border-radius: 40px;
+		   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+		   color: white;
+		   font-size: 24px;
+		   font-family: Georgia, serif;
+		   text-decoration: none;
+		   vertical-align: middle;
+		}
+		.blue {
+		   background: #5F5FFD;
+		   padding: 120px 120px;
+		   -webkit-border-radius: 40px;
+		   -moz-border-radius: 40px;
+		   border-radius: 40px;
+		   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+		   color: white;
+		   font-size: 24px;
+		   font-family: Georgia, serif;
+		   text-decoration: none;
+		   vertical-align: middle;
+		}
+		
+		.yellow {
+		   background: #ECEC67;
+		   padding: 120px 120px;
+		   -webkit-border-radius: 40px;
+		   -moz-border-radius: 40px;
+		   border-radius: 40px;
+		   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   box-shadow: rgba(0,0,0,1) 0 1px 0;
+		   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+		   color: white;
+		   font-size: 24px;
+		   font-family: Georgia, serif;
+		   text-decoration: none;
+		   vertical-align: middle;
+		}
+		
+		ul {
+		   text-align: left;
+		   list-style: none;
+		   padding: 0;
+		   margin: 0;
+		   width: 70%;
+		}
+		
+		ul li {
+		   display: block;
+		   margin: 0;
+		   padding: 0 0 0;
+		}
+		
+		ul li a {
+		   display: block;
+		   width: 100%;
+		}    
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<a class="red" onclick="call('Red');"/>
+			<a class="green" onclick="call('Green');"/>
+			<a class="blue" onclick="call('Blue');"/>
+			<a class="yellow" onclick="call('Yellow');"/>
+		</li>
+	</ul>
+	<script type="text/javascript">
+		function call(color) {
+			console.log("Creating: " + color);
+			$.get('color/'+color+'/');
+		}
+	</script>
+</body>
+</html>

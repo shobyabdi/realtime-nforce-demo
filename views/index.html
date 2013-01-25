@@ -1,0 +1,52 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Shabihul Abdi" />
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<script src="/bootstrap/js/bootstrap.min.js"></script>
+	<link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<style type="text/css">		
+    </style>
+</head>
+<body>
+	<div class="container-fluid">
+	      <div class="row-fluid">
+	        <div class="span12">
+	            <h2>D3.js Demo with Force.com</h2>
+	        </div>
+	      </div>   
+	</div>
+  	<div id="viz"></div>
+  	<script src="http://d3js.org/d3.v3.js"></script>
+    <script type="text/javascript">
+    var width = 1024;
+    var height = 768;
+    var sampleSVG = d3.select("#viz")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+	var socket = io.connect(window.location.hostname);
+		  var posY = 50;
+		  var posX = 50;
+		  socket.on('connect', function () {
+		  });		  
+		  socket.on('force', function (data) {
+  			data = JSON.parse(data);
+	  		sampleSVG.append("circle")
+		        .style("fill", data.sobject.Name)
+		        .attr("r", 40)
+		        .attr("cx", posX)
+		        .attr("cy", posY)
+	        posX += 90;
+	        if(posX > width) {
+	        	posX = 50;
+	        	posY += 90;
+	        }
+		  });
+		  socket.on('disconnect', function () {
+		  });  
+    </script>
+</body>
+</html>
