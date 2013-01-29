@@ -34,6 +34,7 @@
 		  });		  
 		  socket.on('force', function (data) {
   			data = JSON.parse(data);
+  			console.log(data.sobject.Id);
 	  		sampleSVG.append("circle")
 		        .style("fill", data.sobject.Name)
 		        .attr("r", 40)
