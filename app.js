@@ -10,12 +10,12 @@ var nforce = require('nforce');
 var env     = process.env.SFDC_ENV || 'production';
 var port    = process.env.PORT || 5000;
 var host	= process.env.HOST || 'http://localhost';
-var key		= process.env.KEY || '3MVG9rFJvQRVOvk74_Gd4.EAzwYgmtfcRAOxcy6dArPDK2SNbgOHbL2iST4D8qIU6yZLujBLMaY1f41mqgcop';
-var secret	= process.env.SECRET || '7624826066055734035';
+var key		= process.env.KEY || '';
+var secret	= process.env.SECRET || '';
 
-var user = "shoby@mavensconsulting-d3demo.com";
-var pass = "thispasswordwillchange123";
-var sToken = "gBdHxvE1kTRWsBKiRusywcvSn";
+var user = '';
+var pass = '';
+var sToken = '';
 
 /***********************************
  * socket.io configuration         *
@@ -69,7 +69,7 @@ org.authenticate({ username: user, password: pass, securityToken: sToken}, funct
   if(err) return console.log('Unable to connect to force.com. Error: ' + err.statusCode + " - " + err.message);
   console.log('Authenticated with force.com!');
   oauth = resp;
-  var str = org.stream('AccountData', oauth);
+  var str = org.stream('', oauth);
   str.on('connect', function(){
     console.log('connected to force.com pushtopic');
   });
